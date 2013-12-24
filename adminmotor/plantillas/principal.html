@@ -2,13 +2,13 @@
 <html lang = "es-mx">
 
 <head>
-
+	{% load staticfiles %}
 	<title> {% block titulo %} - ADMINMOTOR {% endblock %}</title>
 	<!-- Bootstrap core CS -->
-	<link  rel='stylesheet' href='../static/css/bootstrap.css'>
+	<link  rel='stylesheet' href= "{%static "css/bootstrap.css"%}">
     <!-- Add custom CSS here -->
-    <link href='../static/css/modern-business.css' rel='stylesheet' >
-    <link href='../static/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <link href="{% static "css/modern-business.css"%}" rel='stylesheet' >
+    <link href="{% static "font-awesome/css/font-awesome.min.css" %}" rel='stylesheet'>
 
 </head>
 
@@ -24,38 +24,30 @@
 	            <span class="icon-bar"></span>
 	          </button>
 	          <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-	          <a class="navbar-brand" href="index.html">AdminMotor</a>
+	          <a class="navbar-brand" href="/">AdminMotor</a>
 	        </div>
 
 	        <!-- Collect the nav links, forms, and other content for toggling -->
 	        <div class="collapse navbar-collapse navbar-ex1-collapse">
 	          <ul class="nav navbar-nav navbar-right">
-	            <li><a href="about.html">Inicio</a></li>
-	            <li><a href="services.html">Servicios</a></li>
-	            <li><a href="contact.php">Contacto</a></li>
+	            <li><a href="/">Inicio</a></li>
+	            <li><a href="/servivcios">Servicios</a></li>
+	            <li><a href="/contacto">Contacto</a></li>
 	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Paquetes <b class="caret"></b></a>
+	              <a href="/paquetes" class="dropdown-toggle" data-toggle="dropdown">Paquetes <b class="caret"></b></a>
 	              <ul class="dropdown-menu">
-	                <li><a href="portfolio-1-col.html">1 Basico</a></li>
-	                <li><a href="portfolio-2-col.html">2 Medio</a></li>
-	                <li><a href="portfolio-3-col.html">3 Avanzdo</a></li>
+	                <li><a href="/paquetes/basico">1 Basico</a></li>
+	                <li><a href="/paquetes/medio">2 Medio</a></li>
+	                <li><a href="/paquetes/avanzado">3 Avanzdo</a></li>
 	              </ul>
-	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresa<b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="blog-home-1.html">Quienes somos!!!</a></li>
-	                <li><a href="blog-home-2.html">Como encontrarnos</a></li>
-	              </ul>
-	            </li>
+	            </li>	            
 	            <li class="dropdown">
 	              <li class="dropdown">
 	             <!-- <a class="opener" href="#">Registrate </a>-->
-	             <a type="button" class="button" data-type="zoomin" />Registrate</a>
-	              
+	             <a type="button" class="button" data-type="zoomin" />Registrate</a>	              
 	            </li>
 	            <li class="dropdown">
-	              <a type="button"  class="button" data-type="zoomin1" />Acceder</a>
+	              <a type="button"  class="button" data-type="zoomin1" data-toggle="modal" data-target="#ingresar"/>Acceder</a>
 	            </li>
 	            </li>
 	          </ul>
@@ -72,17 +64,62 @@
 				{% endblock %}
 			</article>
 	</section>
+
 	<footer>
 		<div class="row">
           <div class="col-lg-12">
-            <p>Copyright &copy; Company 2013</p>
+            <p>Copyright &copy; DIDEC 2014</p>
           </div>
         </div>
 	</footer>
+	<div class="modal fade" id="ingresar">
+	<div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    <h4 class="modal-title">Enciende el Admin</h4>
+	  </div>
+	  <div class="modal-body">
+	    <form class="form-horizontal" role="form">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Correo Eléctronico</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" id="inputEmail3" placeholder="Correo Eléctronico">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox"> Recordarme
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Acceder</button>
+		    </div>
+		  </div>
+		</form>
+	  </div>
+	  <div class="modal-footer">
+	    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>	    
+	  </div>
+	</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<!-- JavaScript -->
-    <script src="{{STATIC_URL}}js/jquery-1.10.2.js" ></script>
-    <script src="{{STATIC_URL}}js/bootstrap.js"></script>
-    <script src="{{STATIC_URL}}js/modern-business.js"></script>
+    <script src="{% static "js/jquery-1.10.2.js" %}" ></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="{% static "js/modern-business.js" %}"></script>
 </body>
 
 </html>
