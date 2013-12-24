@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang = "es-mx">
+
+<head>
+
+	<title> {% block titulo %} - ADMINMOTOR {% endblock %}</title>
+	<!-- Bootstrap core CS -->
+	<link  rel='stylesheet' href='../static/css/bootstrap.css'>
+    <!-- Add custom CSS here -->
+    <link href='../static/css/modern-business.css' rel='stylesheet' >
+    <link href='../static/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+	          <a class="navbar-brand" href="index.html">AdminMotor</a>
+	        </div>
+
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	        <div class="collapse navbar-collapse navbar-ex1-collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="about.html">Inicio</a></li>
+	            <li><a href="services.html">Servicios</a></li>
+	            <li><a href="contact.php">Contacto</a></li>
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Paquetes <b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="portfolio-1-col.html">1 Basico</a></li>
+	                <li><a href="portfolio-2-col.html">2 Medio</a></li>
+	                <li><a href="portfolio-3-col.html">3 Avanzdo</a></li>
+	              </ul>
+	            </li>
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Empresa<b class="caret"></b></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="blog-home-1.html">Quienes somos!!!</a></li>
+	                <li><a href="blog-home-2.html">Como encontrarnos</a></li>
+	              </ul>
+	            </li>
+	            <li class="dropdown">
+	              <li class="dropdown">
+	             <!-- <a class="opener" href="#">Registrate </a>-->
+	             <a type="button" class="button" data-type="zoomin" />Registrate</a>
+	              
+	            </li>
+	            <li class="dropdown">
+	              <a type="button"  class="button" data-type="zoomin1" />Acceder</a>
+	            </li>
+	            </li>
+	          </ul>
+	        </div><!-- /.navbar-collapse -->
+	      </div><!-- /.container -->
+	    </nav>
+	</header>
+	<section>
+		<div class="container">
+			<article>
+				{% block encabezado %}
+				{% endblock %}
+				{% block contenido %}
+				{% endblock %}
+			</article>
+	</section>
+	<footer>
+		<div class="row">
+          <div class="col-lg-12">
+            <p>Copyright &copy; Company 2013</p>
+          </div>
+        </div>
+	</footer>
+	<!-- JavaScript -->
+    <script src="{{STATIC_URL}}js/jquery-1.10.2.js" ></script>
+    <script src="{{STATIC_URL}}js/bootstrap.js"></script>
+    <script src="{{STATIC_URL}}js/modern-business.js"></script>
+</body>
+
+</html>
